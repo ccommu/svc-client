@@ -38,6 +38,7 @@ import net.fabricmc.loader.api.metadata.ModMetadata;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.screen.ChatScreen;
 import net.minecraft.util.Identifier;
+import org.lwjgl.glfw.GLFW;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.spongepowered.asm.mixin.MixinEnvironment;
@@ -147,30 +148,22 @@ public class MeteorClient implements ClientModInitializer {
         }));
     }
 
-    @EventHandler
-    private void onTick(TickEvent.Post event) {
-        if (mc.currentScreen == null && mc.getOverlay() == null && KeyBinds.OPEN_COMMANDS.wasPressed()) {
-            mc.setScreen(new ChatScreen(Config.get().prefix.get(), true));
-        }
-    }
-
-    @EventHandler
-    private void onKey(KeyEvent event) {
-        if (event.action == KeyAction.Press && KeyBinds.OPEN_GUI.matchesKey(event.input)) {
-            toggleGui();
-        }
-    }
-
-    @EventHandler
-    private void onMouseClick(MouseClickEvent event) {
-        if (event.action == KeyAction.Press && KeyBinds.OPEN_GUI.matchesMouse(event.click)) {
-            toggleGui();
-        }
-    }
+    // Key bind driven GUI toggles have been removed to keep this client invisible in control bindings.
 
     private void toggleGui() {
         if (Utils.canCloseGui()) mc.currentScreen.close();
         else if (Utils.canOpenGui()) Tabs.get().getFirst().openScreen(GuiThemes.get());
+    }
+
+    @EventHandler(priority = EventPriority.HIGH)
+    private void onKey(KeyEvent event) {
+        if (event.action == KeyAction.Repeat) return;
+
+        // Handle GUI open keybind (Right Shift and Period)
+        if ((event.key() == GLFW.GLFW_KEY_RIGHT_SHIFT || event.key() == GLFW.GLFW_KEY_PERIOD) && event.action == KeyAction.Press) {
+            toggleGui();
+            event.cancel();
+        }
     }
 
     // Hide HUD

@@ -29,10 +29,8 @@ public abstract class SplashTextResourceSupplierMixin {
 
     @Inject(method = "get", at = @At("HEAD"), cancellable = true)
     private void onApply(CallbackInfoReturnable<SplashTextRenderer> cir) {
-        if (Config.get() == null || !Config.get().titleScreenSplashes.get()) return;
-
-        if (override) cir.setReturnValue(new SplashTextRenderer(Text.literal(meteorSplashes.get(random.nextInt(meteorSplashes.size())))));
-        override = !override;
+        // Always show SVC CLIENT ON TOP in gold text, preventing other mods from overriding
+        cir.setReturnValue(new SplashTextRenderer(Text.literal("§6SVC CLIENT ON TOP")));
     }
 
     @Unique

@@ -157,7 +157,7 @@ public abstract class WWindow extends WVerticalList {
                 beforeHeaderInit.accept(this);
             }
 
-            add(theme.label(title, true)).expandCellX().center().pad(4);
+            add(theme.label(title, false)).expandCellX().center().pad(4);
 
             triangle = add(theme.triangle()).pad(4).right().centerY().widget();
             triangle.action = () -> setExpanded(!expanded);

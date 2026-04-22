@@ -232,6 +232,28 @@ public class GuiRenderer {
     public void quad(WWidget widget, Color color) {
         quad(widget.x, widget.y, widget.width, widget.height, color);
     }
+
+    public void roundedQuad(double x, double y, double width, double height, double radius, Color color) {
+        if (radius <= 0 || width <= 0 || height <= 0) {
+            quad(x, y, width, height, color);
+            return;
+        }
+
+        double r = Math.min(Math.min(radius, width / 2), height / 2);
+
+        quad(x + r, y, width - r * 2, height, color);
+        quad(x, y + r, r, height - r * 2, color);
+        quad(x + width - r, y + r, r, height - r * 2, color);
+
+        quad(x, y, r * 2, r * 2, CIRCLE, color);
+        quad(x + width - r * 2, y, r * 2, r * 2, CIRCLE, color);
+        quad(x, y + height - r * 2, r * 2, r * 2, CIRCLE, color);
+        quad(x + width - r * 2, y + height - r * 2, r * 2, r * 2, CIRCLE, color);
+    }
+    public void roundedQuad(WWidget widget, double radius, Color color) {
+        roundedQuad(widget.x, widget.y, widget.width, widget.height, radius, color);
+    }
+
     public void quad(double x, double y, double width, double height, GuiTexture texture, Color color) {
         rTex.texQuad(x, y, width, height, texture.get(width, height), color);
     }

@@ -86,57 +86,57 @@ public class MeteorGuiTheme extends GuiTheme {
 
     // Colors
 
-    public final Setting<SettingColor> accentColor = color("accent", "Main color of the GUI.", new SettingColor(145, 61, 226));
-    public final Setting<SettingColor> checkboxColor = color("checkbox", "Color of checkbox.", new SettingColor(145, 61, 226));
-    public final Setting<SettingColor> plusColor = color("plus", "Color of plus button.", new SettingColor(50, 255, 50));
-    public final Setting<SettingColor> minusColor = color("minus", "Color of minus button.", new SettingColor(255, 50, 50));
-    public final Setting<SettingColor> favoriteColor = color("favorite", "Color of checked favorite button.", new SettingColor(250, 215, 0));
+    public final Setting<SettingColor> accentColor = color("accent", "Main color of the GUI.", new SettingColor(255, 170, 0));
+    public final Setting<SettingColor> checkboxColor = color("checkbox", "Color of checkbox.", new SettingColor(255, 170, 0));
+    public final Setting<SettingColor> plusColor = color("plus", "Color of plus button.", new SettingColor(255, 195, 80));
+    public final Setting<SettingColor> minusColor = color("minus", "Color of minus button.", new SettingColor(255, 140, 55));
+    public final Setting<SettingColor> favoriteColor = color("favorite", "Color of checked favorite button.", new SettingColor(255, 195, 65));
 
     // Text
 
-    public final Setting<SettingColor> textColor = color(sgTextColors, "text", "Color of text.", new SettingColor(255, 255, 255));
-    public final Setting<SettingColor> textSecondaryColor = color(sgTextColors, "text-secondary-text", "Color of secondary text.", new SettingColor(150, 150, 150));
-    public final Setting<SettingColor> textHighlightColor = color(sgTextColors, "text-highlight", "Color of text highlighting.", new SettingColor(45, 125, 245, 100));
-    public final Setting<SettingColor> titleTextColor = color(sgTextColors, "title-text", "Color of title text.", new SettingColor(255, 255, 255));
-    public final Setting<SettingColor> loggedInColor = color(sgTextColors, "logged-in-text", "Color of logged in account name.", new SettingColor(45, 225, 45));
-    public final Setting<SettingColor> placeholderColor = color(sgTextColors, "placeholder", "Color of placeholder text.", new SettingColor(255, 255, 255, 20));
+    public final Setting<SettingColor> textColor = color(sgTextColors, "text", "Color of text.", new SettingColor(225, 225, 235));
+    public final Setting<SettingColor> textSecondaryColor = color(sgTextColors, "text-secondary-text", "Color of secondary text.", new SettingColor(155, 160, 170));
+    public final Setting<SettingColor> textHighlightColor = color(sgTextColors, "text-highlight", "Color of text highlighting.", new SettingColor(255, 170, 0, 100));
+    public final Setting<SettingColor> titleTextColor = color(sgTextColors, "title-text", "Color of title text.", new SettingColor(235, 235, 245, 180));
+    public final Setting<SettingColor> loggedInColor = color(sgTextColors, "logged-in-text", "Color of logged in account name.", new SettingColor(255, 215, 120));
+    public final Setting<SettingColor> placeholderColor = color(sgTextColors, "placeholder", "Color of placeholder text.", new SettingColor(255, 255, 255, 110));
 
     // Background
 
     public final ThreeStateColorSetting backgroundColor = new ThreeStateColorSetting(
             sgBackgroundColors,
             "background",
-            new SettingColor(20, 20, 20, 200),
-            new SettingColor(30, 30, 30, 200),
-            new SettingColor(40, 40, 40, 200)
+            new SettingColor(14, 16, 22, 235),
+            new SettingColor(20, 22, 28, 235),
+            new SettingColor(28, 30, 36, 240)
     );
 
-    public final Setting<SettingColor> moduleBackground = color(sgBackgroundColors, "module-background", "Color of module background when active.", new SettingColor(50, 50, 50));
+    public final Setting<SettingColor> moduleBackground = color(sgBackgroundColors, "module-background", "Color of module background when active.", new SettingColor(28, 30, 36, 240));
 
     // Outline
 
     public final ThreeStateColorSetting outlineColor = new ThreeStateColorSetting(
             sgOutline,
             "outline",
-            new SettingColor(0, 0, 0),
-            new SettingColor(10, 10, 10),
-            new SettingColor(20, 20, 20)
+            new SettingColor(14, 16, 22),
+            new SettingColor(24, 28, 36),
+            new SettingColor(38, 42, 52)
     );
 
     // Separator
 
-    public final Setting<SettingColor> separatorText = color(sgSeparator, "separator-text", "Color of separator text", new SettingColor(255, 255, 255));
-    public final Setting<SettingColor> separatorCenter = color(sgSeparator, "separator-center", "Center color of separators.", new SettingColor(255, 255, 255));
-    public final Setting<SettingColor> separatorEdges = color(sgSeparator, "separator-edges", "Color of separator edges.", new SettingColor(225, 225, 225, 150));
+    public final Setting<SettingColor> separatorText = color(sgSeparator, "separator-text", "Color of separator text", new SettingColor(215, 215, 225));
+    public final Setting<SettingColor> separatorCenter = color(sgSeparator, "separator-center", "Center color of separators.", new SettingColor(145, 150, 165));
+    public final Setting<SettingColor> separatorEdges = color(sgSeparator, "separator-edges", "Color of separator edges.", new SettingColor(90, 95, 115, 110));
 
     // Scrollbar
 
     public final ThreeStateColorSetting scrollbarColor = new ThreeStateColorSetting(
             sgScrollbar,
             "Scrollbar",
-            new SettingColor(30, 30, 30, 200),
-            new SettingColor(40, 40, 40, 200),
-            new SettingColor(50, 50, 50, 200)
+            new SettingColor(28, 30, 38, 205),
+            new SettingColor(34, 38, 48, 205),
+            new SettingColor(44, 48, 62, 205)
     );
 
     // Slider
@@ -144,13 +144,13 @@ public class MeteorGuiTheme extends GuiTheme {
     public final ThreeStateColorSetting sliderHandle = new ThreeStateColorSetting(
             sgSlider,
             "slider-handle",
-            new SettingColor(130, 0, 255),
-            new SettingColor(140, 30, 255),
-            new SettingColor(150, 60, 255)
+            new SettingColor(255, 170, 0),
+            new SettingColor(255, 190, 80),
+            new SettingColor(255, 210, 120)
     );
 
-    public final Setting<SettingColor> sliderLeft = color(sgSlider, "slider-left", "Color of slider left part.", new SettingColor(100,35,170));
-    public final Setting<SettingColor> sliderRight = color(sgSlider, "slider-right", "Color of slider right part.", new SettingColor(50, 50, 50));
+    public final Setting<SettingColor> sliderLeft = color(sgSlider, "slider-left", "Color of slider left part.", new SettingColor(215, 130, 45));
+    public final Setting<SettingColor> sliderRight = color(sgSlider, "slider-right", "Color of slider right part.", new SettingColor(60, 70, 95));
 
     // Starscript
 
@@ -166,7 +166,7 @@ public class MeteorGuiTheme extends GuiTheme {
     private final Setting<SettingColor> starscriptAccessedObjects = color(sgStarscript, "starscript-accessed-objects", "Color of accessed objects (before a dot) in Starscript code.", new SettingColor(152, 118, 170));
 
     public MeteorGuiTheme() {
-        super("Meteor");
+        super("");
 
         settingsFactory = new DefaultSettingsWidgetFactory(this);
     }

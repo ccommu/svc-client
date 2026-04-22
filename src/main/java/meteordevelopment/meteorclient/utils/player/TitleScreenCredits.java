@@ -80,6 +80,8 @@ public class TitleScreenCredits {
     }
 
     private static void add(MeteorAddon addon) {
+        if (addon == MeteorClient.ADDON) return;
+
         Credit credit = new Credit(addon);
 
         credit.text.append(Text.literal(addon.name).styled(style -> style.withColor(addon.color.getPacked())));

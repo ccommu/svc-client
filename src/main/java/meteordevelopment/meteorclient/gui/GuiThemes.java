@@ -46,7 +46,10 @@ public class GuiThemes {
             }
         }
 
-        if (theme == null) select("Meteor");
+        if (theme == null) {
+            String[] names = getNames();
+            if (names.length > 0) select(names[0]);
+        }
     }
 
     public static void add(GuiTheme theme) {

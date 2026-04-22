@@ -23,7 +23,8 @@ public class WMeteorWindow extends WWindow implements MeteorWidget {
     @Override
     protected void onRender(GuiRenderer renderer, double mouseX, double mouseY, double delta) {
         if (expanded || animProgress > 0) {
-            renderer.quad(x, y + header.height, width, height - header.height, theme().backgroundColor.get());
+            renderer.roundedQuad(this, theme().scale(6), theme().backgroundColor.get());
+            renderer.quad(x, y, width, theme().scale(1), theme().accentColor.get());
         }
     }
 
@@ -34,7 +35,9 @@ public class WMeteorWindow extends WWindow implements MeteorWidget {
 
         @Override
         protected void onRender(GuiRenderer renderer, double mouseX, double mouseY, double delta) {
-            renderer.quad(this, theme().accentColor.get());
+            renderer.roundedQuad(this, theme().scale(4), theme().backgroundColor.get());
+            renderer.quad(x, y + height - theme().scale(1), width, theme().scale(1), theme().outlineColor.get());
+            renderer.quad(x, y, width, theme().scale(2), theme().accentColor.get());
         }
     }
 }

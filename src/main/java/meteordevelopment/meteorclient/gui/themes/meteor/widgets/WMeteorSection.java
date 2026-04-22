@@ -6,6 +6,7 @@
 package meteordevelopment.meteorclient.gui.themes.meteor.widgets;
 
 import meteordevelopment.meteorclient.gui.renderer.GuiRenderer;
+import meteordevelopment.meteorclient.gui.themes.meteor.MeteorGuiTheme;
 import meteordevelopment.meteorclient.gui.themes.meteor.MeteorWidget;
 import meteordevelopment.meteorclient.gui.widgets.WWidget;
 import meteordevelopment.meteorclient.gui.widgets.containers.WSection;
@@ -43,6 +44,9 @@ public class WMeteorSection extends WSection {
 
         @Override
         protected void onRender(GuiRenderer renderer, double mouseX, double mouseY, double delta) {
+            MeteorGuiTheme theme = (MeteorGuiTheme) this.theme;
+            renderer.roundedQuad(this, theme.scale(3), theme.backgroundColor.get());
+            renderer.quad(x + theme.scale(2), y + height - theme.scale(1), width - theme.scale(4), theme.scale(1), theme.accentColor.get());
             triangle.rotation = (1 - animProgress) * -90;
         }
     }

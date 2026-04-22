@@ -114,23 +114,7 @@ public class ModuleScreen extends WindowScreen {
 
         // Config sharing
         WHorizontalList sharing = bottom.add(theme.horizontalList()).right().widget();
-        WButton copy = sharing.add(theme.button(GuiRenderer.COPY)).widget();
-        copy.action = () -> {
-            if (toClipboard()) {
-                OkPrompt.create()
-                    .title("Module copied!")
-                    .message("The settings for this module are now in your clipboard.")
-                    .message("You can also copy settings using Ctrl+C.")
-                    .message("Settings can be imported using Ctrl+V or the paste button.")
-                    .id("config-sharing-guide")
-                    .show();
-            }
-        };
-        copy.tooltip = "Copy config";
-
-        WButton paste = sharing.add(theme.button(GuiRenderer.PASTE)).widget();
-        paste.action = this::fromClipboard;
-        paste.tooltip = "Paste config";
+        // Config sharing removed to simplify the module controls.
     }
 
     @Override

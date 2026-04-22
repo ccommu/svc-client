@@ -19,7 +19,7 @@ public interface MeteorWidget extends BaseWidget {
         MeteorGuiTheme theme = theme();
         double s = theme.scale(2);
 
-        renderer.quad(widget.x + s, widget.y + s, widget.width - s * 2, widget.height - s * 2, backgroundColor);
+        renderer.roundedQuad(widget, theme.scale(4), backgroundColor);
 
         renderer.quad(widget.x, widget.y, widget.width, s, outlineColor);
         renderer.quad(widget.x, widget.y + widget.height - s, widget.width, s, outlineColor);
