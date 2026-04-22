@@ -12,4 +12,5 @@
 
 ## Credits
 Built by @cccommu on discord
-*built off of meteor client*
+
+<p align="left">Built off of Meteor Client</p>
